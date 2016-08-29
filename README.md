@@ -1,11 +1,13 @@
-Experimental! Multi Cluster Broker: 
+#Experimental! Multi Cluster Broker: 
  
 Understands multiple clusters and provides a way to query and get a consolidated result across clusters.
 
-To run the node - 
+##To run the node - 
+```
 java <jvm_args> -cp <classpath>:/path/to/multi-cluster-broker-<Version>-selfcontained.jar io.druid.cli.MainExtension server multiClusterBroker
+```
 
-Sample runtime.properties -  
+##Sample runtime.properties -  
 ```
 druid.service=druid/multiClusterBroker
 druid.port=8085
@@ -22,7 +24,7 @@ druid.multi.broker.brokerServiceName=druid/broker
 druid.multi.broker.zkHosts=["zkConnectString-Cluster1","zkConnectString-Cluster2"]
 ```
 
-Assumptions : 
+##Assumptions : 
 * Broker Service Name is same across all the clusters
 * Data across the clusters is Disjoint
 * Datasource names and schema are consistent across clusters
